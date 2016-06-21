@@ -97,7 +97,7 @@ session_start();
           </div>
         </form> -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="javascript:void(0)">CHEF</a></li>
+          <li><a href="javascript:void(0)"data-toggle="modal" data-target="#chef-modal">CHEF</a></li>
           <li><a href="javascript:void(0)">CONTACT US</a></li>
           <li>
           <?php 
@@ -154,330 +154,6 @@ session_start();
 </div>
 
 <!--Modal-->
-
-<!-- <script>
-/*
-function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-     // document.getElementById('status').innerHTML = 'Please log ' +
-      //  'into this app.';
-    } else {
-document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  };
-
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  function checkLoginState() {
-  
- console.log("Login");
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  };
-
-  window.fbAsyncInit = function() {
-   console.log("dasd");
-  FB.init({
-    appId      : '1802908643264334',
-    cookie     : true,  // enable cookies to allow the server to access 
-    status     :false,                    // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.6' // use 
-    });
-
- 
-
-
-
- // Now that we've initialized the JavaScript SDK, we call 
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
-
-
-
-  
-
-
-
- 
-
-  };
-
-  
-
-
-
-// Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me?fields=name,email,gender,picture', function(response) {
-      console.log('Successful login for: ' + response.id);
-     // document.getElementById('status').innerHTML =
-        //'Thanks for logging in, ' + response.name + '!';
-        //console.log(JSON.stringify(response));
-        //var obj=JSON.parse(response);
-        //console.log(response.gender);
-        //console.log(response.picture.data.url);
-       // document.getElementById("pic").innerHTML="<img src="+response.picture.data.url+"></img>";
-       console.log(response.name);
-       //ajaxit(response.name,response.email,response.gender,response.picture.data.url,response.id);
-    });
-  }
-*/
-
-
-  // This is called with the results from from FB.getLoginStatus().
-  /*function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-     setter();
-      //FB.login();
-    } else if (response.status === 'not_authorized') {
-    
-      console.log('Cant');
-    } else {
-      
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
-
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  function checkLoginState() {
-    FB.login(function(response) {
-   FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
- }, {scope: 'public_profile,email,gender'});
-    
-  }
-
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1802908643264334',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.6' // use graph api version 2.5
-  });
-
-  // Now that we've initialized the JavaScript SDK, we call 
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
-
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-
-  };
-
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function setter() {
-    console.log('Welcome!  Fetching your information.... ');
-    //var o=document.forms['login'];
-
-    FB.api('/me?fields=name,email,gender,picture', function(response) {
-      console.log('Successful login for: ' + response.email  );
-      ajaxit(response.id,response.name,response.email)
-
-      
-    });
-  }
-
-
-function ajaxit(fbid,n,e)
-{
-  //console.log(n);
-  //var u=_("user").value;
-  //if(u!="")
-  //  _("unstatus").innerHTML="Checking...";
-  //  if (u == '') {
-      //    document.getElementById("unstatus").innerHtml = "";
-        //  return;
-      //}
-      //p=encodeURIComponent(p);
-      //console.log(p);
-      console.log(fbid);
-          if (window.XMLHttpRequest) {
-              xmlhttp = new XMLHttpRequest();
-          }
-          else {
-              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-          }
-
-          xmlhttp.onreadystatechange = function () {
-              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
-
-        //          //show(sem);
-          //        console.log(xmlhttp.responseText);
-
-               if(xmlhttp.responseText!=0)
-                {
-                  console.log(xmlhttp.responseText);
-      //            logout();
-        //       window.location.href="profile.php";
-               FB.logout(function(response) {
-   // Person is now logged out
-});
-           }
-               else if(xmlhttp.responseText==0)
-//_("unstatus").innerHTML="Name already taken";
-console.log("Not so nice");
-
-
-
-              }
-          }
-      
-      xmlhttp.open("GET", "php/social.php?name="+n+"&email="+e+"&fbid="+fbid, true);
-      xmlhttp.send();
-}
-*/
-
-
-  // This is called with the results from from FB.getLoginStatus().
-  
-
-  // This function is called when someone finishes with the Login
-  // Button.  See the onlogin handler attached to it in the sample
-  // code below.
-  document.fbAsyncInit = function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-
-  window.fbAsyncInit = function(){
-  FB.init({
-    appId      : '1802908643264334',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.5' // use graph api version 2.5
-  });
-}; 
-  // Now that we've initialized the JavaScript SDK, we call 
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
-    function fire(){
-    FB.login(function(response) {
-
-        if (response.authResponse) {
-            console.log('Welcome!  Fetching your information.... ');
-            //console.log(response); // dump complete info
-            access_token = response.authResponse.accessToken; //get access token
-            user_id = response.authResponse.userID; //get FB UID
-
-            FB.api('/me', function(response) {
-                user_email = response.email; //get user email
-          // you can store this data into your database             
-            });
-
-        } else {
-            //user hit cancel button
-            console.log('User cancelled login or did not fully authorize.');
-
-        }
-    }, {
-        scope: 'publish_stream,email'
-    });
-}
-  /*FB.getLoginStatus(function(response) {
-    console.log(response);
-    if(response.status=='connected')
-      testAPI();
-    else
-    {
-      FB.login(FB.getLoginStatus());
-    }
-  });
-*/
-  
-
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
-  }
-</script> -->
-
 <script>
 
 
@@ -523,16 +199,7 @@ console.log("Not so nice");
 
   function ajaxit(fbid,n,e)
 {
-  //console.log(n);
-  //var u=_("user").value;
-  //if(u!="")
-  //  _("unstatus").innerHTML="Checking...";
-  //  if (u == '') {
-      //    document.getElementById("unstatus").innerHtml = "";
-        //  return;
-      //}
-      //p=encodeURIComponent(p);
-      //console.log(p);
+
       console.log(fbid);
           if (window.XMLHttpRequest) {
               xmlhttp = new XMLHttpRequest();
@@ -545,20 +212,13 @@ console.log("Not so nice");
               if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
 
-        //          //show(sem);
-          //        console.log(xmlhttp.responseText);
-
                if(xmlhttp.responseText!=0)
                 {
                   console.log(xmlhttp.responseText);
                   location.reload(true);
-                  console.log(xmlhttp.responseText);
-      //            logout();
-        //       window.location.href="profile.php";
-               
+                  console.log(xmlhttp.responseText);     
            }
                else if(xmlhttp.responseText==0)
-//_("unstatus").innerHTML="Name already taken";
 console.log("Not so nice");
 
 
@@ -640,6 +300,101 @@ console.log("Not so nice");
           </div>
       </div>
     </div>
+
+
+    <div class="modal fade" id="chef-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h2 class="modal-title">Become a Chef! <small>&nbsp;&nbsp;  Kanishk's Mess</small></h2>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal">
+              <!--   <div class="form-group">
+                    <label class="col-md-2 control-label">You are a</label>
+
+                    <div class="col-md-10">
+                      <div class="radio radio-primary">
+                        <label>
+                          <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
+                          Home caterer
+                        </label>
+                      </div>
+                      <div class="radio radio-primary">
+                        <label>
+                          <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+                          Professional chef
+                        </label>
+                      </div>
+                      <div class="radio radio-primary">
+                        <label>
+                          <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+                          Professional caterer
+                        </label>
+                      </div>
+                      <div class="radio radio-primary">
+                        <label>
+                          <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
+                          Home chef
+                        </label>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text" name="name" placeholder="Full Name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text" name="email" placeholder="Email ID">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Mobile</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text" name="phone" placeholder="Mobile Number (10 digits)">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="password" name="pass" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Confirm Password</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="password" name="confpass" placeholder="Confirm Password">
+                    </div>
+                  </div>
+                  <HR>
+                     <div class="form-group">
+                    <label for="textArea" class="col-sm-2 control-label">Address</label>
+                    <div class="col-sm-10">
+                     <input class="form-control" id ="seller_address" type="text" name="address" placeholder="Address ">
+                    </div>
+
+                    
+                  </div>
+
+                      <button type="submit" class="btn btn-warning btn-raised">Submit</button>
+                    </div>
+                  </div>
+
+              </form>
+                          </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
     <!--Modal-->
 
   <script src="js/jquery.js"></script>
@@ -761,10 +516,13 @@ console.log("Not so nice");
   $("#dropdown-menu select").dropdown();
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf610uWLtO90Ili791ub0ubsukcKcJh8Q&libraries=places&callback=initMap"
-        async defer></script>
+        async defer></script>       
   <script>
+  
+
     function initMap()
       {
+
           var input=document.getElementById('location');
           var autocomplete=new google.maps.places.Autocomplete(input);
           autocomplete.addListener('place_changed', function() {
@@ -840,11 +598,6 @@ console.log("Not so nice");
                                 destinations:destinations,
                                 travelMode: google.maps.TravelMode.DRIVING,
                               }, callback);
-
-                            
-
-                        
-
                     }
                     else if(data.status=="error"){
                       console.log(data.message);
@@ -858,9 +611,12 @@ console.log("Not so nice");
 
 
           });
+  
+
 
         
-      }
+      
+  }
   </script>      
 
 </body>

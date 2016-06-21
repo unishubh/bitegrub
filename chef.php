@@ -496,7 +496,7 @@ function close_message(){
 <?php
 require_once('config/db.php');
 $name=$_POST['name'];
-$email=$_POST['email']
+$email=$_POST['email'];
 $phone=$_POST['phone'];
 $pwd=$_POST['pwd'];
 $adr=$_POST['adr'];

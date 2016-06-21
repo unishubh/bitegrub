@@ -97,7 +97,7 @@ session_start();
           </div>
         </form> -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="javascript:void(0)"data-toggle="modal" data-target="#chef-modal">CHEF</a></li>
+          <li><a href="chef.php">CHEF</a></li>
           <li><a href="javascript:void(0)">CONTACT US</a></li>
           <li>
           <?php 

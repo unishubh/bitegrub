@@ -48,9 +48,7 @@ function close_message(){
       font-size: 16px;
       color: #fff;
     }
-    body{
-      background-image: url("img/food-bg.jpg");
-    }
+    
   </style>
 
   <style type="text/css">
@@ -163,106 +161,14 @@ function close_message(){
 
 <div class="container">
 
-  <div class="navbar navbar-transparent">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-          <img alt="Brand" src="...">
-        </a>
-      </div>
-      <div class="navbar-collapse collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="javascript:void(0)">ABOUT US</a></li>
-          <li><a href="javascript:void(0)">HOW IT WORKS</a></li>
-          <li><a href="javascript:void(0)">BLOG</a></li>
-          <!-- <li class="dropdown">
-            <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-              <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="javascript:void(0)">Action</a></li>
-              <li><a href="javascript:void(0)">Another action</a></li>
-              <li><a href="javascript:void(0)">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Dropdown header</li>
-              <li><a href="javascript:void(0)">Separated link</a></li>
-              <li><a href="javascript:void(0)">One more separated link</a></li>
-            </ul>
-          </li> -->
-        </ul>
-        <!-- <form class="navbar-form navbar-left">
-          <div class="form-group">
-            <input class="form-control col-md-8" placeholder="Search" type="text">
-          </div>
-        </form> -->
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#chef-modal">CHEF</a></li>
-          <li><a href="javascript:void(0)">CONTACT US</a></li>
-          <li><a href="javascript:void(0)" data-toggle="modal" data-target="#login-modal">LOGIN</a></li>
-          <!-- <li class="dropdown">
-            <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-              <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="javascript:void(0)">Action</a></li>
-              <li><a href="javascript:void(0)">Another action</a></li>
-              <li><a href="javascript:void(0)">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="javascript:void(0)">Separated link</a></li>
-            </ul>
-          </li> -->
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!--Login Modal-->
-      <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-         <div class="modal-dialog">
-            <div class="loginmodal-container">
-               <h1>Login to Your Account</h1>
-               <br>
-               <form>
-                  <input type="text" name="user" placeholder="Phone or Email ID">
-                  <input type="password" name="pass" placeholder="Password">
-                  <input type="submit" class="login loginmodal-submit" value="Login">
-               </form>
-               <div class="login-help">
-                  <a href="#" onclick="newregister()">New user? Register!</a>
-               </div>
-            </div>
-         </div>
-      </div>
+  
+      
       <!--.//Login Modal-->
       <!--Register Modal-->
-      <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-         <div class="modal-dialog">
-            <div class="loginmodal-container">
-               <h1>Sign Up <small>&nbsp;&nbsp;  It's free</small></h1>
-               <br>
-               <form>
-                  <input type="text" name="name" placeholder="Full Name">
-                  <input type="text" name="email" placeholder="Email ID">
-                  <input type="text" name="phone" placeholder="Mobile Number (10 digits)">
-                  <input type="password" name="pass" placeholder="Password">
-                  <input type="password" name="confpass" placeholder="Confirm Password">
-                  <input type="submit" name="register" class="login loginmodal-submit" value="Register">
-               </form>
-            </div>
-         </div>
-      </div>
+     
       <!--.//Register Modal-->
       <!--Chef Modal-->
-      <div class="modal fade" id="chef-modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h2 class="modal-title">Become a Chef! <small>&nbsp;&nbsp;  Kanishk's Mess</small></h2>
-            </div>
-            <div class="modal-body">
+      
               <form class="form-horizontal">
               <!--   <div class="form-group">
                     <label class="col-md-2 control-label">You are a</label>
@@ -328,162 +234,70 @@ function close_message(){
                      <div class="form-group">
                     <label for="textArea" class="col-sm-2 control-label">Address</label>
                     <div class="col-sm-10">
-                     <input class="form-control" type="text" name="address" placeholder="Address ">
+                     <input class="form-control" type="text" id="address" name="address" placeholder="Address ">
                     </div>
 
                     
                   </div>
 
-                      <button type="submit" class="btn btn-warning btn-raised">Submit</button>
+                      <button type="button" class="btn btn-warning btn-raised">Submit</button>
                     </div>
                   </div>
 
               </form>
                           </div>
-            <div class="modal-footer">
+           
               <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
               <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
           </div>
         </div>
-      </div>
+   
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf610uWLtO90Ili791ub0ubsukcKcJh8Q&libraries=places&callback=initMap"
+        async defer></script>       
+  <script>
+  
+
+    function initMap()
+      {
+
+          var input=document.getElementById('address');
+          var autocomplete=new google.maps.places.Autocomplete(input);
+          autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+
+            if (!place.geometry) {
+              window.alert("Autocomplete's returned place contains no geometry");
+              return;
+            }
+            else{
+
+              
+                var lat=place.geometry.location.lat();
+                var long=place.geometry.location.lng();
+
+                var address="";
+              
+            
+                place.address_components.forEach(function(element){
+
+                 
+                  address+=element.long_name+",";
+
+                });
+
+                    console.log(address);
+                    console.log(lat);
+                    console.log(long);
 
 
-      <!--.//Chef Modal-->
+                   // write seller register function 
+             } 
 
-
-<div class="row">
-  <div class="col-md-12" style="margin-top:100px;">
-    <H1 class="text-center" style="color: rgb(255, 255, 255); font-weight: bold;">WHOLESOME MEALS FROM WONDERCHEFS AROUND YOU</H1>
-    <div class="form-group label-floating" style="padding:5%">
-      <div class="input-group" style="background-color: rgb(255, 255, 255); padding: 10px; border-style: solid; border-width: 2px; border-color: orange;">
-        <span class="input-group-addon"><i class="material-icons">place</i></span>
-        <label class="control-label" for="addon3a">ENTER BUILDING NAME, LOCALITY OR AREA</label>
-        <input id="addon3a" class="form-control" type="text">
-        <!-- <p class="help-block">The label is inside the <code>input-group</code> so that it is positioned properly as a placeholder.</p> -->
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-warning btn-raised btn-lg">
-            <i class="material-icons">done</i>
-          </button>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<!-- Open source code -->
-<script>
-  window.page = window.location.hash || "#about";
-
-  $(document).ready(function () {
-    if (window.page != "#about") {
-      $(".menu").find("li[data-target=" + window.page + "]").trigger("click");
-    }
-  });
-
-  $(window).on("resize", function () {
-    $("html, body").height($(window).height());
-    $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight());
-    $(".pages").height($(window).height());
-  }).trigger("resize");
-
-  $(".menu li").click(function () {
-    // Menu
-    if (!$(this).data("target")) return;
-    if ($(this).is(".active")) return;
-    $(".menu li").not($(this)).removeClass("active");
-    $(".page").not(page).removeClass("active").hide();
-    window.page = $(this).data("target");
-    var page = $(window.page);
-    window.location.hash = window.page;
-    $(this).addClass("active");
-
-
-    page.show();
-
-    var totop = setInterval(function () {
-      $(".pages").animate({scrollTop: 0}, 0);
-    }, 1);
-
-    setTimeout(function () {
-      page.addClass("active");
-      setTimeout(function () {
-        clearInterval(totop);
-      }, 1000);
-    }, 100);
-  });
-
-  function cleanSource(html) {
-    var lines = html.split(/\n/);
-
-    lines.shift();
-    lines.splice(-1, 1);
-
-    var indentSize = lines[0].length - lines[0].trim().length,
-        re = new RegExp(" {" + indentSize + "}");
-
-    lines = lines.map(function (line) {
-      if (line.match(re)) {
-        line = line.substring(indentSize);
-      }
-
-      return line;
-    });
-
-    lines = lines.join("\n");
-
-    return lines;
-  }
-
-  $("#opensource").click(function () {
-    $.get(window.location.href, function (data) {
-      var html = $(data).find(window.page).html();
-      html = cleanSource(html);
-      $("#source-modal pre").text(html);
-      $("#source-modal").modal();
-    });
-  });
+          });   
+    }         
 </script>
-
-<!-- Twitter Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Material Design for Bootstrap -->
-<script src="js/material.js"></script>
-<script src="js/ripples.min.js"></script>
-<script>
-  $.material.init();
-</script>
-
-
-<!-- Sliders -->
-<script src="js/jquery.nouislider.min.js"></script>
-<script>
-  $(function () {
-    $.material.init();
-    $(".shor").noUiSlider({
-      start: 40,
-      connect: "lower",
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
-
-    $(".svert").noUiSlider({
-      orientation: "vertical",
-      start: 40,
-      connect: "lower",
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
-  });
-</script>
-
 <!-- Dropdown.js -->
 <script src="js/jquery.dropdown.js"></script>
 <script>
@@ -493,24 +307,3 @@ function close_message(){
 
 </body>
 </html>
-<?php
-require_once('config/db.php');
-$name=$_POST['name'];
-$email=$_POST['email'];
-$phone=$_POST['phone'];
-$pwd=$_POST['pwd'];
-$adr=$_POST['adr'];
-$lat;
-$long;
-$sql="INSERT INTO  sellers (name,email,phoneno,password,seller_add,latitude,longitude) VALUES (':name',':email',':phone',':pwd',':adr',':long',':lat')  ";
-$q=$conn->prepare($sql);
-$q->bindparam(':name',$name);
-$q->bindparam(':email',$email);
-$q->bindparam(':phone',$phone);
-$q->bindparam(':pwd',$pwd);
-$q->bindparam(':long',$long);
-$q->bindparam(':lat',$lat);
-$q->execute();
-
-
-?>

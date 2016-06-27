@@ -169,7 +169,7 @@ function close_message(){
       <!--.//Register Modal-->
       <!--Chef Modal-->
       
-              <form class="form-horizontal">
+              <form class="form-horizontal"  method="post" action="/bg/php/store/chefin.php">
               <!--   <div class="form-group">
                     <label class="col-md-2 control-label">You are a</label>
 
@@ -232,15 +232,18 @@ function close_message(){
                   </div>
                   <HR>
                      <div class="form-group">
-                    <label for="textArea" class="col-sm-2 control-label">Address</label>
+                    <label for="textArea" id="add" name="add" class="col-sm-2 control-label">Address</label>
                     <div class="col-sm-10">
                      <input class="form-control" type="text" id="address" name="address" placeholder="Address ">
+                     <input type="hidden" name="lat" id="lat">
+                     <input type="hidden" name="long" id="long">
+                     <input type="hidden" name="page" value="<?php echo $_SERVER['REQUEST_URI']; ?>" >
                     </div>
 
                     
                   </div>
 
-                      <button type="button" class="btn btn-warning btn-raised">Submit</button>
+                      <input type="submit"  name="submit" value="Submit" class="btn btn-warning btn-raised">
                     </div>
                   </div>
 
@@ -290,7 +293,9 @@ function close_message(){
                     console.log(address);
                     console.log(lat);
                     console.log(long);
-
+                    document.getElementById("lat").value=lat;
+                    document.getElementById("long").value=long;
+                    document.getElementById("add").value=add;
 
                    // write seller register function 
              } 

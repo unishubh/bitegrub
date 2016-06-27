@@ -414,7 +414,7 @@ function loader()
           <div class="row">
             <div class="col-md-12">
               <hr style="background-color:#ababab">
-              <h4 style="font-weight:bold;">Sub Total <span style="float: right;margin-right:50px;"><?php echo $sum; ?></span></h4>
+              <h4 style="font-weight:bold;">Sub Total <span id="total" style="float: right;margin-right:50px;"><?php echo $sum; ?></span></h4>
             </div>
           </div>
         </div>
@@ -600,7 +600,7 @@ function loader()
           </div>
           <div class="row">
             <div class="col-md-12">
-              <button class="btn btn-block btn-inverse btn-raised">PLACE ORDER <i class="material-icons">keyboard_arrow_right</i></button>
+              <button class="btn btn-block btn-inverse btn-raised" onclick="test()">PLACE ORDER <i class="material-icons">keyboard_arrow_right</i></button>
             </div>
           </div>
         </div>
@@ -648,12 +648,62 @@ function loader()
         </div>
       </div>
     </div>
+    <script>
+    function test()
+       {
+        //pf=
+        if(document.getElementById('location').value!='')
+        {
+         // alert("!");
+          address=document.getElementById('location').value;
+        console.log(document.getElementById('location').value);
+      }
+      else
+      {
+        alert("Please Specify the address at the bottom of the screen");
+        return;
+      }
+        var cost=document.getElementById('total').innerHTML;
+        console.log(cost);
+        
+         if (window.XMLHttpRequest) {
+              xmlhttp = new XMLHttpRequest();
+          }
+          else {
+              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+
+          xmlhttp.onreadystatechange = function () {
+              if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+
+               if(xmlhttp.responseText==1)
+                {
+                  alert("Your Order has been places Successfully");
+                  console.log(xmlhttp.responseText);
+                  location.href="index.php";
+                  console.log(xmlhttp.responseText);
+                  
+               
+                }
+               else if(xmlhttp.responseText==0)
+                console.log("Not so nice");
+              }
+          }
+      
+      xmlhttp.open("GET", "php/placeorder.php?address="+address+"&cost="+cost, true);
+      xmlhttp.send();
+
+       }
+       </script>
   </footer>
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf610uWLtO90Ili791ub0ubsukcKcJh8Q&libraries=places&callback=initMap"
         async defer></script>
 <script>
+ 
+//var address="";
     function initMap()
       {
           var input=document.getElementById('location');
@@ -677,11 +727,13 @@ function loader()
 
                 });
             }
-            console.log(address);
+           // console.log(address);
 
-            // define checkout ajax here
+           //function placeorder(address);
            }); 
        }       
+       
+       
 </script>              
 
 <!-- Open source code -->
